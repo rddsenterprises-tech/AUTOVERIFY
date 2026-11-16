@@ -22,3 +22,6 @@ The included sample records are fictional/demo content. Do not present them as o
 4. Add secure backend endpoints; never expose provider secrets in browser code.
 5. Add authentication, report entitlements, and payment after provider and business rules are finalized.
 6. Add tests, logging, rate limits, and privacy/retention controls.
+
+## Preview workflow
+Development changes are made on `preview/initial-ui`. The `main` branch is reserved for approved production releases.
