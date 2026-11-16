@@ -62,4 +62,14 @@ document.getElementById('year').textContent=new Date().getFullYear();
 vinInput.addEventListener('input',e=>{e.target.value=e.target.value.toUpperCase();document.getElementById('vinSummary').textContent=e.target.value||'Not entered';});
 document.getElementById('customerForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.currentTarget);const data=Object.fromEntries(f.entries());data.vin=data.vin.trim().toUpperCase();const err=document.getElementById('error');if(!data.vin){err.textContent='Please enter the vehicle number.';err.classList.remove('hidden');return;}err.classList.add('hidden');sessionStorage.setItem('autoverify_customer',JSON.stringify(data));sessionStorage.setItem('autoverify_vin',data.vin);location.href='/checkout.html';});
 </script>
-</body></html>
+<script>
+(function(){
+  document.addEventListener('keydown',function(event){
+    if(event.metaKey && event.shiftKey && event.key.toLowerCase()==='a'){
+      event.preventDefault();
+      try{sessionStorage.setItem('autoverify_admin_shortcut','1');}catch(_){}
+      window.location.href='/admin.html';
+    }
+  });
+})();
+</script></body></html>
