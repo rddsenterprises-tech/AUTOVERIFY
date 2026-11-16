@@ -1,27 +1,39 @@
 # AutoVerify
 
-Vehicle VIN and license-plate lookup interface.
+A responsive vehicle lookup and vehicle-history report website.
 
-## Current status
-- Initial frontend prototype.
-- VIN and plate input modes.
-- Clearly labelled illustrative sample report.
-- No live vehicle-history provider is connected yet.
-- Checkout is not enabled; pricing is a UI placeholder only.
+## Project structure
+
+- `index.html` — public-facing website, VIN and registration lookup interface, report package presentation.
+- `admin.html` — separate operations dashboard interface.
+
+## Current integration status
+
+- VIN and registration input validation: available.
+- Vehicle-history data provider: not connected.
+- Secure checkout and payment processing: not connected.
+- Customer order database: not connected.
+- Tawk.to live chat: awaiting the client's Property ID and Widget ID.
+- Administrator authentication: must be implemented before private operational data is stored.
 
 ## Run locally
-This is a static HTML prototype. Open `index.html` in a browser, or serve the folder with any static web server.
 
-## Important data disclaimer
-The included sample records are fictional/demo content. Do not present them as official, verified, government, insurance, auction, theft, lien, odometer, or accident records. Real lookups require a licensed data provider and appropriate legal/privacy review.
+Open `index.html` in a browser, or serve the project directory with a static web server.
 
-## Planned development
-1. Finalize responsive UI and accessible interactions.
-2. Integrate VIN decoding (e.g. a trusted decoder API).
-3. Select a licensed vehicle-history data provider for supported markets.
-4. Add secure backend endpoints; never expose provider secrets in browser code.
-5. Add authentication, report entitlements, and payment after provider and business rules are finalized.
-6. Add tests, logging, rate limits, and privacy/retention controls.
+## Data and service requirements
 
-## Preview workflow
-Development changes are made on `preview/initial-ui`. The `main` branch is reserved for approved production releases.
+The current lookup experience validates the submitted input format only. It does not retrieve official vehicle records. The report layout is illustrative and must not be represented as verified vehicle history.
+
+Before accepting paid orders:
+1. Select a licensed vehicle-history data provider and confirm supported countries and coverage.
+2. Implement secure server-side API endpoints; never expose provider credentials in browser code.
+3. Implement administrator authentication and role-based authorization.
+4. Connect a secure payment gateway and verify payment status server-side.
+5. Connect order storage, report entitlements, and report delivery.
+6. Publish complete privacy, terms, refund, and customer support policies.
+7. Configure Tawk.to using the client's account identifiers.
+8. Test the full customer and administrator journeys before production release.
+
+## Branch workflow
+
+UI/UX work is developed on preview branches. The `main` branch is reserved for approved production releases.
