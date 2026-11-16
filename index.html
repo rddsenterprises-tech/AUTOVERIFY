@@ -29,13 +29,15 @@
         <span><strong class="block text-lg tracking-tight text-white">AUTO<span class="text-emerald-400">VERIFY</span></strong><small class="block text-[10px] uppercase tracking-[.2em] text-slate-500">Vehicle lookup demo</small></span>
       </a>
       <nav class="hidden items-center gap-6 text-sm text-slate-300 md:flex">
-        <a href="#features" class="hover:text-emerald-400">Features</a><a href="#report" class="hover:text-emerald-400">Sample report</a>
-        <button id="plansBtn" class="rounded-lg bg-emerald-400 px-4 py-2 font-bold text-slate-950 hover:bg-emerald-300">Report plans</button>
+        <a href="#home" class="hover:text-emerald-400">Home</a>
+        <a href="#pricing" class="hover:text-emerald-400">Pricing</a>
+        <a href="#privacy" class="hover:text-emerald-400">Privacy Policy</a>
+        <a href="#contact" class="hover:text-emerald-400">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="mx-auto max-w-7xl px-4 sm:px-6">
+  <main id="home" class="mx-auto max-w-7xl px-4 sm:px-6">
     <section class="py-16 text-center sm:py-24">
       <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/70 px-3 py-2 text-xs text-emerald-300"><span>◆</span> Vehicle lookup · VIN and license plate</div>
       <h1 class="mx-auto max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">Know more before you buy.</h1>
@@ -70,6 +72,51 @@
       </div>
     </section>
 
+
+    <section id="pricing" class="scroll-mt-24 pb-20">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-xs font-bold uppercase tracking-[.25em] text-emerald-300">Simple, one-time pricing</p>
+        <h2 class="mt-3 text-3xl font-extrabold text-white sm:text-4xl">Choose your vehicle report</h2>
+        <p class="mt-4 text-sm leading-6 text-slate-400">Choose a package to explore the report features. Prices and delivery estimates are proposed and are not yet available for purchase.</p>
+      </div>
+      <div class="mx-auto mt-10 grid max-w-6xl items-stretch gap-5 lg:grid-cols-3">
+        <article class="glass flex flex-col rounded-2xl p-6">
+          <div class="flex items-center justify-between"><h3 class="text-lg font-extrabold text-white">Silver</h3><span class="rounded-full border border-slate-600 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-300">Essential</span></div>
+          <p class="mt-5 text-4xl font-extrabold text-white">$47.99</p><p class="mt-2 text-xs text-slate-400">Proposed processing: within 12 hours</p>
+          <p class="mt-6 text-xs font-bold uppercase tracking-wider text-emerald-300">Top features</p>
+          <ul class="mt-4 flex-1 space-y-3 text-sm text-slate-300">
+            <li>✓ 1 VIN Report</li><li>✓ Downloadable PDF Report</li><li>✓ Vehicle Specifications</li><li>✓ Title Status Check</li><li>✓ Accident & Damage Records</li><li>✓ Open Recall Check</li><li>✓ Odometer Verification</li><li>✓ Stolen Vehicle Check</li>
+          </ul>
+          <button type="button" data-package="Silver" class="buyPlan mt-7 w-full rounded-xl border border-slate-600 bg-slate-800 py-3 text-sm font-bold text-white hover:border-emerald-400 hover:text-emerald-300">Buy Now</button>
+        </article>
+        <article class="relative flex flex-col rounded-2xl border-2 border-amber-400 bg-slate-900 p-6 shadow-2xl shadow-amber-500/10 lg:-translate-y-3">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-amber-400 px-4 py-1 text-[10px] font-extrabold uppercase tracking-wider text-slate-950">Most Popular</span>
+          <div class="flex items-center justify-between"><h3 class="text-lg font-extrabold text-white">Gold</h3><span class="rounded-full border border-amber-400/50 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-amber-300">Advanced</span></div>
+          <p class="mt-5 text-4xl font-extrabold text-white">$68.99</p><p class="mt-2 text-xs text-slate-400">Proposed processing: 4 to 6 hours</p>
+          <p class="mt-6 text-xs font-bold uppercase tracking-wider text-amber-300">Everything in Silver, plus</p>
+          <ul class="mt-4 flex-1 space-y-3 text-sm text-slate-300">
+            <li>✓ Ownership Details</li><li>✓ Registration History</li><li>✓ Market Value Estimate</li><li>✓ Total Loss & Salvage Records</li><li>✓ Service History (when available)</li><li>✓ Vehicle Usage Records</li><li>✓ Lien Status Check</li>
+          </ul>
+          <button type="button" data-package="Gold" class="buyPlan mt-7 w-full rounded-xl bg-amber-400 py-3 text-sm font-extrabold text-slate-950 hover:bg-amber-300">Buy Now</button>
+        </article>
+        <article class="glass flex flex-col rounded-2xl p-6">
+          <div class="flex items-center justify-between"><h3 class="text-lg font-extrabold text-white">Platinum</h3><span class="rounded-full border border-violet-400/50 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-violet-300">Premium</span></div>
+          <p class="mt-5 text-4xl font-extrabold text-white">$89.99</p><p class="mt-2 text-xs text-slate-400">Proposed processing: 15 to 30 minutes</p>
+          <p class="mt-6 text-xs font-bold uppercase tracking-wider text-violet-300">Everything in Gold, plus</p>
+          <ul class="mt-4 flex-1 space-y-3 text-sm text-slate-300">
+            <li>✓ Active Lien & Loan Verification</li><li>✓ Comprehensive Record Search</li><li>✓ Auction History & Photos (when available)</li><li>✓ Flood, Fire & Hail Damage Check</li><li>✓ Advanced Vehicle Insights</li><li>✓ Priority Report Processing</li><li>✓ Premium Customer Support</li>
+          </ul>
+          <button type="button" data-package="Platinum" class="buyPlan mt-7 w-full rounded-xl border border-violet-400/60 bg-violet-500/10 py-3 text-sm font-bold text-violet-200 hover:bg-violet-500/20">Buy Now</button>
+        </article>
+      </div>
+      <p class="mx-auto mt-7 max-w-4xl text-center text-xs leading-5 text-slate-500">Feature availability depends on supported data sources and the vehicle's country. No live report provider, report delivery service or payment checkout is connected yet. Package prices and turnaround estimates are proposed, not an active offer.</p>
+    </section>
+    <section id="privacy" class="scroll-mt-24 border-t border-slate-800 py-12">
+      <div class="mx-auto max-w-4xl"><h2 class="text-2xl font-extrabold text-white">Privacy Policy</h2><p class="mt-3 text-sm leading-6 text-slate-400">Our full privacy policy will be published before account registration, vehicle lookups or payment processing are enabled. It will explain what information AutoVerify collects, how it is used, which service providers receive it, and how long it is retained.</p></div>
+    </section>
+    <section id="contact" class="scroll-mt-24 border-t border-slate-800 py-12">
+      <div class="mx-auto max-w-4xl"><h2 class="text-2xl font-extrabold text-white">Contact AutoVerify</h2><p class="mt-3 text-sm leading-6 text-slate-400">Customer support contact details will be published here before paid services launch.</p></div>
+    </section>
     <section id="report" class="hidden pb-16">
       <div class="mb-6 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
         <div><button id="backBtn" class="mb-3 text-xs text-emerald-300 hover:underline">← New lookup</button><h2 id="vehicleTitle" class="text-2xl font-extrabold text-white sm:text-3xl">Sample vehicle report</h2><p class="mt-2 font-mono text-xs text-slate-400">Lookup reference: <span id="lookupRef"></span></p></div>
@@ -88,7 +135,7 @@
       </div>
     </section>
   </main>
-  <footer class="border-t border-slate-800 py-8 text-center text-xs text-slate-500">© 2026 AutoVerify · Prototype interface · Sample data only</footer>
+  <footer class="border-t border-slate-800 py-8 text-center text-xs text-slate-500"><div class="mb-3 flex flex-wrap justify-center gap-5"><a href="#home" class="hover:text-emerald-300">Home</a><a href="#pricing" class="hover:text-emerald-300">Pricing</a><a href="#privacy" class="hover:text-emerald-300">Privacy Policy</a><a href="#contact" class="hover:text-emerald-300">Contact</a></div>© 2026 AutoVerify · Prototype interface · Sample data only</footer>
   <dialog id="plans" class="w-[min(92vw,34rem)] rounded-2xl border border-slate-700 bg-slate-900 p-6 text-slate-200 backdrop:bg-slate-950/80">
     <div class="flex items-start justify-between"><div><h2 class="text-xl font-extrabold text-white">Report plans</h2><p class="mt-1 text-xs text-slate-400">Pricing concept only. Checkout is not connected.</p></div><button id="closePlans" class="text-xl text-slate-400" aria-label="Close">×</button></div>
     <div class="mt-5 grid gap-3 sm:grid-cols-2"><div class="rounded-xl border border-slate-700 p-4"><p class="text-xs text-slate-400">Single report</p><strong class="mt-2 block text-2xl text-white">$9.99</strong><p class="mt-2 text-xs text-slate-400">Illustrative price</p></div><div class="rounded-xl border border-emerald-500 p-4"><p class="text-xs text-emerald-300">5-report bundle</p><strong class="mt-2 block text-2xl text-white">$24.99</strong><p class="mt-2 text-xs text-slate-400">Illustrative price</p></div></div>
@@ -127,7 +174,15 @@
     });
     $('backBtn').addEventListener('click', () => { $('report').classList.add('hidden'); window.location.hash = ''; window.scrollTo({top:0,behavior:'smooth'}); });
     $('printBtn').addEventListener('click', () => window.print());
-    $('plansBtn').addEventListener('click', () => $('plans').showModal());
+
+    document.querySelectorAll('.buyPlan').forEach((button) => button.addEventListener('click', () => {
+      const packageName = button.dataset.package;
+      const dialog = $('plans');
+      dialog.querySelector('h2').textContent = packageName + ' package';
+      dialog.querySelector('p').textContent = 'Checkout is not connected yet. No payment will be taken.';
+      dialog.showModal();
+    }));
+    $('plansBtn')?.addEventListener('click', () => $('plans').showModal());
     $('closePlans').addEventListener('click', () => $('plans').close());
     $('plans').addEventListener('click', (e) => { if (e.target === $('plans')) $('plans').close(); });
   </script>
