@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" class="h-full bg-slate-950">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#05070d">
+  <title>AutoVerify — Vehicle Lookup Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = { theme: { extend: { colors: { brand: { 400:'#34d399',500:'#22c55e',600:'#16a34a' }, navy:{950:'#05070d'} } } } };
+  </script>
+  <style>
+    body{font-family:Inter,system-ui,sans-serif;background:radial-gradient(ellipse at 50% -20%,rgba(16,185,129,.14),transparent 55%),#05070d}
+    .glass{background:rgba(15,23,42,.78);backdrop-filter:blur(14px);border:1px solid rgba(148,163,184,.14);box-shadow:0 16px 40px rgba(0,0,0,.16)}
+    button,a,input,select{-webkit-tap-highlight-color:transparent}
+    :focus-visible{outline:2px solid #34d399;outline-offset:3px}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+    @media print{body{background:#fff;color:#111827}.no-print,header,footer{display:none!important}#report{display:block!important}.glass{background:#fff;color:#111827;box-shadow:none;border:1px solid #d1d5db}}
+  </style>
+</head>
+<body class="min-h-full text-slate-200">
+  <header class="sticky top-0 z-20 border-b border-slate-800/80 bg-slate-950/85 backdrop-blur-xl">
+    <div class="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
+      <a href="#" class="flex items-center gap-3" aria-label="AutoVerify home">
+        <span class="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 text-xl font-black text-slate-950">A</span>
+        <span><strong class="block text-lg tracking-tight text-white">AUTO<span class="text-emerald-400">VERIFY</span></strong><small class="block text-[10px] uppercase tracking-[.2em] text-slate-500">Vehicle lookup demo</small></span>
+      </a>
+      <nav class="hidden items-center gap-6 text-sm text-slate-300 md:flex">
+        <a href="#features" class="hover:text-emerald-400">Features</a><a href="#report" class="hover:text-emerald-400">Sample report</a>
+        <button id="plansBtn" class="rounded-lg bg-emerald-400 px-4 py-2 font-bold text-slate-950 hover:bg-emerald-300">Report plans</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-7xl px-4 sm:px-6">
+    <section class="py-16 text-center sm:py-24">
+      <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/70 px-3 py-2 text-xs text-emerald-300"><span>◆</span> Vehicle lookup · VIN and license plate</div>
+      <h1 class="mx-auto max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">Know more before you buy.</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">Explore a vehicle lookup experience with a sample report covering specifications, reported events, mileage entries and recalls.</p>
+
+      <div class="glass mx-auto mt-10 max-w-3xl rounded-2xl p-5 text-left sm:p-8">
+        <div class="mb-6 flex gap-5 border-b border-slate-700 pb-3 text-sm font-semibold">
+          <button id="vinTab" class="border-b-2 border-emerald-400 pb-3 text-emerald-300" aria-pressed="true">▤ Search by VIN</button>
+          <button id="plateTab" class="pb-3 text-slate-400 hover:text-white" aria-pressed="false">▣ Search by plate</button>
+        </div>
+        <form id="lookupForm" class="space-y-4">
+          <div id="vinFields">
+            <label for="vin" class="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-400">17-character vehicle identification number</label>
+            <div class="flex flex-col gap-2 sm:flex-row">
+              <input id="vin" maxlength="17" autocomplete="off" spellcheck="false" placeholder="e.g. 1HGCR2F83HA000000" class="min-w-0 flex-1 rounded-xl border border-slate-700 bg-slate-950 px-4 py-4 font-mono uppercase tracking-wider text-white placeholder:text-slate-600">
+              <button id="demoBtn" type="button" class="rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-xs font-semibold text-slate-200 hover:bg-slate-700">Try demo VIN</button>
+            </div>
+          </div>
+          <div id="plateFields" class="hidden grid-cols-1 gap-3 sm:grid-cols-3">
+            <div class="sm:col-span-2"><label for="plate" class="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-400">License plate</label><input id="plate" maxlength="12" placeholder="e.g. ABC-1234" class="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-4 font-mono uppercase text-white placeholder:text-slate-600"></div>
+            <div><label for="region" class="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-400">State / region</label><select id="region" class="w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-4 text-sm text-white"><option value="CA">California</option><option value="TX">Texas</option><option value="NY">New York</option><option value="FL">Florida</option><option value="ON">Ontario</option><option value="OTHER">Other</option></select></div>
+          </div>
+          <p id="formError" class="hidden text-sm text-rose-300" role="alert"></p>
+          <button class="flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-400 py-4 font-extrabold text-slate-950 shadow-lg shadow-emerald-500/15 hover:brightness-110" type="submit">VIEW SAMPLE VEHICLE REPORT <span>→</span></button>
+        </form>
+        <p class="mt-5 border-t border-slate-800 pt-4 text-xs leading-5 text-slate-500">Demo only: this prototype displays illustrative sample content. It does not query official vehicle, police, insurance, auction, lien or government records.</p>
+      </div>
+      <div id="features" class="mx-auto mt-14 grid max-w-4xl gap-4 text-left sm:grid-cols-3">
+        <article class="glass rounded-xl p-5"><span class="text-emerald-400">▤</span><h2 class="mt-3 text-sm font-bold text-white">Title & brand events</h2><p class="mt-1 text-xs leading-5 text-slate-400">A sample layout for title-related information.</p></article>
+        <article class="glass rounded-xl p-5"><span class="text-emerald-400">◈</span><h2 class="mt-3 text-sm font-bold text-white">Reported history</h2><p class="mt-1 text-xs leading-5 text-slate-400">Explore example accident and ownership entries.</p></article>
+        <article class="glass rounded-xl p-5"><span class="text-emerald-400">◷</span><h2 class="mt-3 text-sm font-bold text-white">Mileage & recalls</h2><p class="mt-1 text-xs leading-5 text-slate-400">Review illustrative odometer and recall sections.</p></article>
+      </div>
+    </section>
+
+    <section id="report" class="hidden pb-16">
+      <div class="mb-6 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+        <div><button id="backBtn" class="mb-3 text-xs text-emerald-300 hover:underline">← New lookup</button><h2 id="vehicleTitle" class="text-2xl font-extrabold text-white sm:text-3xl">Sample vehicle report</h2><p class="mt-2 font-mono text-xs text-slate-400">Lookup reference: <span id="lookupRef"></span></p></div>
+        <button id="printBtn" class="no-print rounded-lg border border-slate-700 bg-slate-800 px-4 py-2 text-xs font-semibold hover:bg-slate-700">Print / Save PDF</button>
+      </div>
+      <div class="mb-6 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-xs leading-5 text-amber-200">Illustrative preview only — this is not a verified vehicle history report. The displayed events below are fictional sample data.</div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="glass rounded-xl p-4"><p class="text-xs uppercase text-slate-400">Title status</p><strong class="mt-2 block text-lg text-emerald-300">Sample: Clean</strong><small class="text-slate-500">Not independently verified</small></article>
+        <article class="glass rounded-xl p-4"><p class="text-xs uppercase text-slate-400">Accident history</p><strong class="mt-2 block text-lg text-amber-300">1 sample event</strong><small class="text-slate-500">Illustrative only</small></article>
+        <article class="glass rounded-xl p-4"><p class="text-xs uppercase text-slate-400">Odometer</p><strong class="mt-2 block text-lg text-white">84,320 mi</strong><small class="text-slate-500">Example reading only</small></article>
+        <article class="glass rounded-xl p-4"><p class="text-xs uppercase text-slate-400">Recall entries</p><strong class="mt-2 block text-lg text-white">1 sample entry</strong><small class="text-slate-500">Check official sources</small></article>
+      </div>
+      <div class="mt-6 grid gap-6 lg:grid-cols-[2fr_1fr]">
+        <article class="glass rounded-2xl p-6"><h3 class="mb-5 border-b border-slate-800 pb-3 font-bold text-white">Sample vehicle timeline</h3><ol class="space-y-5 border-l border-slate-700 pl-5 text-sm"><li><strong class="text-emerald-300">Jan 12, 2017 · 15 mi</strong><p class="mt-1 text-white">Vehicle manufactured</p><p class="text-xs text-slate-400">Example initial registration entry.</p></li><li><strong class="text-emerald-300">May 18, 2018 · 12,400 mi</strong><p class="mt-1 text-white">Routine maintenance</p><p class="text-xs text-slate-400">Illustrative service record.</p></li><li><strong class="text-amber-300">Oct 04, 2020 · 42,100 mi</strong><p class="mt-1 text-white">Minor accident reported</p><p class="text-xs text-slate-400">Fictional example event, not a real record.</p></li></ol></article>
+        <aside class="glass rounded-2xl p-6"><h3 class="mb-3 font-bold text-white">Recall information</h3><p class="text-sm text-amber-300">Sample recall entry</p><p class="mt-2 text-xs leading-5 text-slate-400">Always verify recalls directly with the vehicle manufacturer or the relevant official safety authority.</p><a class="mt-4 inline-block text-xs text-emerald-300 underline" href="https://www.nhtsa.gov/recalls" target="_blank" rel="noreferrer">NHTSA recall lookup</a></aside>
+      </div>
+    </section>
+  </main>
+  <footer class="border-t border-slate-800 py-8 text-center text-xs text-slate-500">© 2026 AutoVerify · Prototype interface · Sample data only</footer>
+  <dialog id="plans" class="w-[min(92vw,34rem)] rounded-2xl border border-slate-700 bg-slate-900 p-6 text-slate-200 backdrop:bg-slate-950/80">
+    <div class="flex items-start justify-between"><div><h2 class="text-xl font-extrabold text-white">Report plans</h2><p class="mt-1 text-xs text-slate-400">Pricing concept only. Checkout is not connected.</p></div><button id="closePlans" class="text-xl text-slate-400" aria-label="Close">×</button></div>
+    <div class="mt-5 grid gap-3 sm:grid-cols-2"><div class="rounded-xl border border-slate-700 p-4"><p class="text-xs text-slate-400">Single report</p><strong class="mt-2 block text-2xl text-white">$9.99</strong><p class="mt-2 text-xs text-slate-400">Illustrative price</p></div><div class="rounded-xl border border-emerald-500 p-4"><p class="text-xs text-emerald-300">5-report bundle</p><strong class="mt-2 block text-2xl text-white">$24.99</strong><p class="mt-2 text-xs text-slate-400">Illustrative price</p></div></div>
+  </dialog>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    let mode = 'vin';
+    function setMode(next) {
+      mode = next;
+      $('vinFields').classList.toggle('hidden', next !== 'vin');
+      $('plateFields').classList.toggle('hidden', next !== 'plate');
+      $('plateFields').classList.toggle('grid', next === 'plate');
+      $('vinTab').className = next === 'vin' ? 'border-b-2 border-emerald-400 pb-3 text-emerald-300' : 'pb-3 text-slate-400 hover:text-white';
+      $('plateTab').className = next === 'plate' ? 'border-b-2 border-emerald-400 pb-3 text-emerald-300' : 'pb-3 text-slate-400 hover:text-white';
+      $('vinTab').setAttribute('aria-pressed', String(next === 'vin'));
+      $('plateTab').setAttribute('aria-pressed', String(next === 'plate'));
+      $('formError').classList.add('hidden');
+    }
+    $('vinTab').addEventListener('click', () => setMode('vin'));
+    $('plateTab').addEventListener('click', () => setMode('plate'));
+    $('demoBtn').addEventListener('click', () => { $('vin').value = '1HGCR2F83HA000000'; setMode('vin'); });
+    $('lookupForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const value = mode === 'vin' ? $('vin').value.trim().toUpperCase() : $('plate').value.trim().toUpperCase();
+      const valid = mode === 'vin' ? /^[A-HJ-NPR-Z0-9]{17}$/.test(value) : /^[A-Z0-9 -]{2,12}$/.test(value);
+      if (!valid) {
+        $('formError').textContent = mode === 'vin' ? 'Enter a valid 17-character VIN (letters I, O and Q are not used).' : 'Enter a valid license plate number.';
+        $('formError').classList.remove('hidden');
+        return;
+      }
+      $('lookupRef').textContent = mode === 'vin' ? 'VIN · ' + value : 'PLATE · ' + value + ' · ' + $('region').value;
+      $('vehicleTitle').textContent = 'Sample 2017 Honda Accord EX-L';
+      $('report').classList.remove('hidden');
+      window.location.hash = 'report';
+      $('report').scrollIntoView({behavior:'smooth'});
+    });
+    $('backBtn').addEventListener('click', () => { $('report').classList.add('hidden'); window.location.hash = ''; window.scrollTo({top:0,behavior:'smooth'}); });
+    $('printBtn').addEventListener('click', () => window.print());
+    $('plansBtn').addEventListener('click', () => $('plans').showModal());
+    $('closePlans').addEventListener('click', () => $('plans').close());
+    $('plans').addEventListener('click', (e) => { if (e.target === $('plans')) $('plans').close(); });
+  </script>
+</body>
+</html>
