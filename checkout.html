@@ -3,4 +3,14 @@ const pkg=sessionStorage.getItem('autoverify_package'),price=sessionStorage.getI
 if(!pkg||!price||!raw){location.replace('/pricing.html');}
 let customer={};try{customer=JSON.parse(raw||'{}')}catch(e){location.replace('/customer-details.html')}
 document.getElementById('pkg').textContent=pkg||'—';document.getElementById('vin').textContent=vin||'—';document.getElementById('price').textContent=price?'$'+price:'—';document.getElementById('customer').textContent=[customer.name,customer.email,customer.phone,customer.country].filter(Boolean).join(' · ')||'Customer details will appear here.';
+</script><script>
+(function(){
+  document.addEventListener('keydown',function(event){
+    if(event.metaKey && event.shiftKey && event.key.toLowerCase()==='a'){
+      event.preventDefault();
+      try{sessionStorage.setItem('autoverify_admin_shortcut','1');}catch(_){}
+      window.location.href='/admin.html';
+    }
+  });
+})();
 </script></body></html>
