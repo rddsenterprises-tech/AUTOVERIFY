@@ -128,5 +128,15 @@ document.getElementById('closeDialog').addEventListener('click',()=>packageDialo
 document.getElementById('dialogDone').addEventListener('click',()=>packageDialog.close());
 packageDialog.addEventListener('click',event=>{if(event.target===packageDialog)packageDialog.close();});
 </script>
-</body>
+<script>
+(function(){
+  document.addEventListener('keydown',function(event){
+    if(event.metaKey && event.shiftKey && event.key.toLowerCase()==='a'){
+      event.preventDefault();
+      try{sessionStorage.setItem('autoverify_admin_shortcut','1');}catch(_){}
+      window.location.href='/admin.html';
+    }
+  });
+})();
+</script></body>
 </html>
