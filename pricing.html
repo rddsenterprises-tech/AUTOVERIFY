@@ -117,9 +117,12 @@
 <script>
 const savedVin=sessionStorage.getItem('autoverify_vin');if(savedVin){const banner=document.getElementById('vehicleBanner');banner.textContent='VIN entered: '+savedVin+' · Select a report package to continue.';banner.classList.remove('hidden');}
 const packageDialog=document.getElementById('packageDialog');
+const prices={Silver:'47.99',Gold:'68.99',Platinum:'89.99'};
 document.querySelectorAll('.buyPlan').forEach(button=>button.addEventListener('click',()=>{
- document.getElementById('dialogTitle').textContent=button.dataset.package+' package';
- packageDialog.showModal();
+ const chosen=button.dataset.package;
+ sessionStorage.setItem('autoverify_package',chosen);
+ sessionStorage.setItem('autoverify_price',prices[chosen]);
+ window.location.href='/customer-details.html';
 }));
 document.getElementById('closeDialog').addEventListener('click',()=>packageDialog.close());
 document.getElementById('dialogDone').addEventListener('click',()=>packageDialog.close());
