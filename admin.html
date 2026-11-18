@@ -3,7 +3,13 @@
 <script src="https://cdn.tailwindcss.com"></script><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}body{font-family:"DM Sans",sans-serif;background:#f7f8fa;color:#101827}h1,h2,h3{font-family:Manrope,sans-serif}.brand{background:linear-gradient(145deg,#0c8e80,#075a56)}.side{background:#fff;border-right:1px solid #e7eaf0}.navlink{display:flex;align-items:center;gap:12px;padding:11px 13px;border:1px solid transparent;border-radius:12px;color:#64748b;font-size:13px;font-weight:700;transition:.18s}.navlink:hover,.navlink.active{color:#087e73;background:#eaf7f5;border-color:#d6efeb}.navlink.active{font-weight:800}.surface{background:#fff;border:1px solid #e7eaf0;border-radius:18px;box-shadow:0 8px 28px rgba(15,23,42,.035)}.metric{background:#fff;border:1px solid #e7eaf0;border-radius:16px;box-shadow:0 8px 24px rgba(15,23,42,.03)}.eyebrow{font-size:10px;font-weight:800;letter-spacing:.19em;text-transform:uppercase;color:#087e73}.pill{display:inline-flex;align-items:center;border:1px solid #e2e8f0;border-radius:999px;padding:5px 9px;font-size:10px;font-weight:800;letter-spacing:.035em}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:11px;padding:10px 14px;font-size:12px;font-weight:800;transition:.18s}.btn-primary{background:#087e73;color:white}.btn-primary:hover{background:#06685f}.btn-secondary{background:white;color:#334155;border:1px solid #dbe2e9}.btn-secondary:hover{border-color:#087e73;color:#087e73}.section{scroll-margin-top:96px} :focus-visible{outline:2px solid #087e73;outline-offset:3px}@media(max-width:1023px){.side{position:relative;border-right:0;border-bottom:1px solid #e7eaf0}.side nav{display:flex;overflow-x:auto;padding-bottom:3px}.navlink{white-space:nowrap}.side .setup-note,.side .side-foot{display:none}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
-</style></head><body class="min-h-screen"><script>/* Client-facing dashboard preview: intentionally no login gate. Do not enter real customer or payment data. */</script>
+</style></head><body class="min-h-screen"><script>
+(function(){
+  let allowed=false;
+  try{allowed=sessionStorage.getItem('autoverify_admin_shortcut')==='1';sessionStorage.removeItem('autoverify_admin_shortcut');}catch(_){}
+  if(!allowed){window.location.replace('/');}
+})();
+</script>
 <div class="min-h-screen lg:grid lg:grid-cols-[258px_minmax(0,1fr)]">
 <aside class="side p-5 lg:fixed lg:inset-y-0 lg:w-[258px] lg:overflow-y-auto">
 <a href="/" class="flex items-center gap-3 px-2 py-2"><span><strong class="block text-sm tracking-tight">AUTO<span class="text-teal-700">VERIFY</span></strong><small class="text-[9px] font-extrabold uppercase tracking-[.2em] text-slate-400">Admin workspace</small></span></a>
