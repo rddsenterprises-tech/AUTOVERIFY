@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fa">
+  <meta name="description" content="Explore AutoVerify vehicle history report packages and vehicle lookup options.">
+  <title>AutoVerify — Report Packages</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#101827;--muted:#667085;--line:#e7eaf0;--accent:#087e73;--gold:#c99b42}
+    *{box-sizing:border-box}
+    body{font-family:"DM Sans",sans-serif;color:var(--ink);background:#f7f8fa}
+    h1,h2,h3,.display{font-family:Manrope,"DM Sans",sans-serif}
+    .container-wide{width:min(1160px,calc(100% - 40px));margin-inline:auto}
+    .topbar{background:rgba(255,255,255,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(231,234,240,.9)}
+    .brand-mark{background:linear-gradient(145deg,#0c8e80,#075a56);box-shadow:0 8px 20px rgba(8,126,115,.2)}
+    .hero-shell{background:radial-gradient(ellipse at 85% 15%,rgba(8,126,115,.10),transparent 35%),linear-gradient(135deg,#f4f7f8 0%,#fff 58%,#f7f4ed 100%)}
+    .hero-grid{background-image:linear-gradient(rgba(16,24,39,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(16,24,39,.035) 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(to bottom,black,transparent)}
+    .panel{background:#fff;border:1px solid var(--line);box-shadow:0 18px 55px rgba(16,24,39,.07)}
+    .soft-card{background:#fff;border:1px solid var(--line);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+    .soft-card:hover{transform:translateY(-4px);border-color:#cbd5df;box-shadow:0 18px 35px rgba(16,24,39,.08)}
+    .btn-primary{background:#087e73;color:#fff;box-shadow:0 8px 18px rgba(8,126,115,.16);transition:background .2s,transform .2s}
+    .btn-primary:hover{background:#06685f;transform:translateY(-1px)}
+    .btn-dark{background:#101827;color:#fff;transition:background .2s,transform .2s}
+    .btn-dark:hover{background:#253247;transform:translateY(-1px)}
+    .field{width:100%;border:1px solid #dce2e9;border-radius:12px;background:#fff;padding:14px 15px;color:#101827;outline:none;transition:border .2s,box-shadow .2s}
+    .field:focus{border-color:#087e73;box-shadow:0 0 0 4px rgba(8,126,115,.10)}
+    .tab[aria-pressed="true"]{color:#087e73;border-color:#087e73;background:#effaf8}
+    .gold-card{border:1.5px solid #d4ad62;box-shadow:0 18px 45px rgba(156,116,40,.10)}
+    .gold-pill{background:#f8efd9;color:#8b641d}
+    .eyebrow{letter-spacing:.18em}
+    .section-space{padding-block:88px}
+    .reveal{animation:rise .65s both}
+    @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    :focus-visible{outline:3px solid rgba(8,126,115,.55);outline-offset:3px}
+    @media(max-width:640px){.container-wide{width:min(100% - 28px,1160px)}.section-space{padding-block:62px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+    @media print{header,footer,.no-print{display:none!important}body{background:#fff}}
+  </style>
+</head>
+<body>
+<header class="topbar sticky top-0 z-40"><div class="container-wide flex h-[74px] items-center justify-between gap-4"><a href="/index.html" class="flex items-center gap-3"><strong>AUTO<span class="text-teal-700">VERIFY</span></strong></a><nav class="flex gap-3 text-xs font-bold sm:gap-7"><a href="/index.html">Home</a><a href="/pricing.html">Pricing</a><a href="/policy.html">Policy</a><a href="/contact.html">Contact</a></nav></div></header>
+<main>
+<section id="pricing" class="section-space scroll-mt-20">
+    <div class="container-wide">
+      <div class="mx-auto max-w-[650px] text-center"><p class="eyebrow text-[10px] font-extrabold uppercase text-teal-700">Transparent package options</p><h2 class="display mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Choose your level of insight</h2><p class="mt-4 text-sm leading-6 text-slate-500">Choose a report package. After checkout is enabled and payment is verified, your report will be manually prepared and delivered by email.</p></div>
+      <div id="vehicleBanner" class="mx-auto mt-8 hidden max-w-[1080px] rounded-xl border border-teal-200 bg-teal-50 p-4 text-sm font-semibold text-teal-900"></div><div class="mx-auto mt-8 grid max-w-[1080px] items-stretch gap-5 lg:grid-cols-3">
+        <article class="soft-card flex flex-col rounded-[22px] p-6 sm:p-7">
+          <div class="flex items-center justify-between"><h3 class="text-lg font-extrabold">Silver</h3><span class="rounded-full bg-slate-100 px-3 py-1 text-[9px] font-extrabold uppercase tracking-wider text-slate-600">Essential</span></div>
+          <p class="mt-6 text-4xl font-extrabold tracking-tight">$47.99</p><p class="mt-2 text-xs text-slate-500">Essential vehicle information</p><div class="my-6 h-px bg-slate-100"></div>
+          <p class="text-[10px] font-extrabold uppercase tracking-[.16em] text-teal-700">Package includes</p>
+          <ul class="mt-4 flex-1 space-y-3 text-[13px] text-slate-600"><li>✓ Vehicle specifications</li><li>✓ Downloadable report format</li><li>✓ Title status information</li><li>✓ Accident & damage records</li><li>✓ Open recall information</li><li>✓ Odometer records</li><li>✓ Stolen vehicle check</li></ul>
+          <button type="button" data-package="Silver" class="buyPlan mt-8 w-full rounded-xl border border-slate-300 py-3.5 text-sm font-extrabold transition hover:border-teal-700 hover:bg-teal-50 hover:text-teal-800">Choose Silver</button>
+        </article>
+        <article class="gold-card relative flex flex-col rounded-[22px] bg-white p-6 sm:p-7">
+          <span class="gold-pill absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-4 py-1.5 text-[9px] font-extrabold uppercase tracking-[.14em]">Most popular</span>
+          <div class="flex items-center justify-between"><h3 class="text-lg font-extrabold">Gold</h3><span class="gold-pill rounded-full px-3 py-1 text-[9px] font-extrabold uppercase tracking-wider">Advanced</span></div>
+          <p class="mt-6 text-4xl font-extrabold tracking-tight">$68.99</p><p class="mt-2 text-xs text-slate-500">More history and ownership insights</p><div class="my-6 h-px bg-amber-100"></div>
+          <p class="text-[10px] font-extrabold uppercase tracking-[.16em] text-amber-700">Everything in Silver, plus</p>
+          <ul class="mt-4 flex-1 space-y-3 text-[13px] text-slate-600"><li>✓ Ownership details</li><li>✓ Registration history</li><li>✓ Market value estimate</li><li>✓ Total loss & salvage records</li><li>✓ Service history, when available</li><li>✓ Vehicle usage records</li><li>✓ Lien status information</li></ul>
+          <button type="button" data-package="Gold" class="buyPlan btn-dark mt-8 w-full rounded-xl py-3.5 text-sm font-extrabold">Choose Gold <span class="ml-2">→</span></button>
+        </article>
+        <article class="soft-card flex flex-col rounded-[22px] p-6 sm:p-7">
+          <div class="flex items-center justify-between"><h3 class="text-lg font-extrabold">Platinum</h3><span class="rounded-full bg-violet-50 px-3 py-1 text-[9px] font-extrabold uppercase tracking-wider text-violet-700">Premium</span></div>
+          <p class="mt-6 text-4xl font-extrabold tracking-tight">$89.99</p><p class="mt-2 text-xs text-slate-500">Expanded report coverage</p><div class="my-6 h-px bg-slate-100"></div>
+          <p class="text-[10px] font-extrabold uppercase tracking-[.16em] text-teal-700">Everything in Gold, plus</p>
+          <ul class="mt-4 flex-1 space-y-3 text-[13px] text-slate-600"><li>✓ Active lien & loan information</li><li>✓ Expanded record search</li><li>✓ Auction history, when available</li><li>✓ Flood, fire & hail indicators</li><li>✓ Advanced vehicle insights</li><li>✓ Priority processing option</li><li>✓ Premium customer support</li></ul>
+          <button type="button" data-package="Platinum" class="buyPlan mt-8 w-full rounded-xl border border-slate-300 py-3.5 text-sm font-extrabold transition hover:border-teal-700 hover:bg-teal-50 hover:text-teal-800">Choose Platinum</button>
+        </article>
+      </div>
+      <p class="mx-auto mt-7 max-w-3xl text-center text-[10px] leading-5 text-slate-400">Prices and package contents are proposed and are not currently available for purchase. Actual coverage, availability and delivery terms must be confirmed with the selected licensed data provider before launch.</p>
+    </div>
+  </section>
+
+  <section id="faqs" class="border-t border-slate-200 bg-white py-16 sm:py-20">
+    <div class="container-wide">
+      <div class="mx-auto max-w-[680px] text-center">
+        <p class="text-[10px] font-extrabold uppercase tracking-[.18em] text-teal-700">Need a little more information?</p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Frequently asked questions</h2>
+        <p class="mt-4 text-sm leading-6 text-slate-500">Helpful details about package pricing, our money-back guarantee, report access and payment requirements.</p>
+      </div>
+      <div class="mx-auto mt-9 max-w-[820px] divide-y divide-slate-200 border-y border-slate-200">
+        <details class="group py-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-5 text-left text-sm font-extrabold sm:text-base">What does the BEST CARFAX cost?<span class="text-xl text-teal-700 transition-transform group-open:rotate-45">+</span></summary>
+          <p class="mt-4 max-w-[700px] text-sm leading-7 text-slate-600">AutoVerify currently offers three report package options: <strong>Silver — $47.99</strong>, <strong>Gold — $68.99</strong> and <strong>Platinum — $89.99</strong>.</p>
+        </details>
+        <details class="group py-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-5 text-left text-sm font-extrabold sm:text-base">What does the money-back guarantee mean?<span class="text-xl text-teal-700 transition-transform group-open:rotate-45">+</span></summary>
+          <p class="mt-4 max-w-[700px] text-sm leading-7 text-slate-600">If you are not satisfied with your report, you may request a refund within 30 days of purchase. Refund eligibility and the steps to request a refund will be governed by AutoVerify's Terms and Conditions.</p>
+        </details>
+        <details class="group py-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-5 text-left text-sm font-extrabold sm:text-base">How long can I access my purchased vehicle history report?<span class="text-xl text-teal-700 transition-transform group-open:rotate-45">+</span></summary>
+          <p class="mt-4 max-w-[700px] text-sm leading-7 text-slate-600">You can access your purchased report for 30 days after purchase through your account or the link in your order confirmation. Updates for the vehicle you checked are included during this 30-day access period. Access expires after 30 days.</p>
+        </details>
+        <details class="group py-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-5 text-left text-sm font-extrabold sm:text-base">What do I need to purchase a vehicle history report?<span class="text-xl text-teal-700 transition-transform group-open:rotate-45">+</span></summary>
+          <p class="mt-4 max-w-[700px] text-sm leading-7 text-slate-600">You need a valid email address and a supported credit or debit card to purchase a report. Available payment methods will be confirmed when secure checkout is activated.</p>
+        </details>
+      </div>
+      <p class="mx-auto mt-6 max-w-[820px] text-[10px] leading-5 text-slate-400">Please review the Policy page for service information. Online checkout and customer account access are currently unavailable.</p>
+    </div>
+  </section>
+</main>
+<footer class="border-t bg-white py-7"><div class="container-wide flex flex-wrap justify-between gap-4 text-xs text-slate-500"><strong>AUTOVERIFY · © 2026</strong><nav class="flex gap-5"><a href="/index.html">Home</a><a href="/pricing.html">Pricing</a><a href="/policy.html">Policy</a><a href="/contact.html">Contact</a></nav></div></footer>
+<dialog id="packageDialog" class="w-[min(92vw,480px)] rounded-[22px] border border-slate-200 bg-white p-0 text-slate-900 shadow-2xl backdrop:bg-slate-950/50">
+  <div class="p-6 sm:p-7">
+    <div class="flex items-start justify-between gap-4"><div><p class="eyebrow text-[10px] font-extrabold uppercase text-teal-700">Package selected</p><h2 id="dialogTitle" class="mt-2 text-2xl font-extrabold">Silver package</h2></div><button id="closeDialog" class="grid h-9 w-9 place-items-center rounded-full bg-slate-100 text-xl text-slate-500 hover:bg-slate-200" aria-label="Close dialog">×</button></div>
+    <p class="mt-4 text-sm leading-6 text-slate-500">Your selected package can be ordered once secure checkout is enabled. After payment verification, the report will be manually prepared by our team and emailed to you.</p>
+    <div class="mt-6 rounded-xl border border-amber-200 bg-amber-50 p-4 text-xs leading-5 text-amber-900">Online checkout is currently unavailable. Orders and payments cannot be submitted at this time.</div>
+    <button id="dialogDone" class="btn-primary mt-6 w-full rounded-xl py-3.5 text-sm font-extrabold">Understood</button>
+  </div>
+</dialog>
+<script>
+const savedVin=sessionStorage.getItem('autoverify_vin');if(savedVin){const banner=document.getElementById('vehicleBanner');banner.textContent='VIN entered: '+savedVin+' · Select a report package to continue.';banner.classList.remove('hidden');}
+const packageDialog=document.getElementById('packageDialog');
+const prices={Silver:'47.99',Gold:'68.99',Platinum:'89.99'};
+document.querySelectorAll('.buyPlan').forEach(button=>button.addEventListener('click',()=>{
+ const chosen=button.dataset.package;
+ sessionStorage.setItem('autoverify_package',chosen);
+ sessionStorage.setItem('autoverify_price',prices[chosen]);
+ window.location.href='/customer-details.html';
+}));
+document.getElementById('closeDialog').addEventListener('click',()=>packageDialog.close());
+document.getElementById('dialogDone').addEventListener('click',()=>packageDialog.close());
+packageDialog.addEventListener('click',event=>{if(event.target===packageDialog)packageDialog.close();});
+</script>
+<script>
+(function(){
+  document.addEventListener('keydown',function(event){
+    if(event.metaKey && event.shiftKey && event.key.toLowerCase()==='a'){
+      event.preventDefault();
+      try{sessionStorage.setItem('autoverify_admin_shortcut','1');}catch(_){}
+      window.location.href='/admin.html';
+    }
+  });
+})();
+</script></body>
+</html>
