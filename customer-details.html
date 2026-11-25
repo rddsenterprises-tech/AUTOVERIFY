@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f8fa">
+<meta name="description" content="Review your AutoVerify vehicle report package details.">
+<title>AutoVerify | Customer Details</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{font-family:"DM Sans",sans-serif;color:#101827;background:#f7f8fa}h1,h2,h3{font-family:Manrope,sans-serif}
+.container-wide{width:min(1080px,calc(100% - 32px));margin:auto}.topbar{background:rgba(255,255,255,.95);border-bottom:1px solid #e7eaf0}
+.field{width:100%;border:1px solid #dce2e9;border-radius:12px;padding:13px 14px;outline:none;background:white}.field:focus{border-color:#087e73;box-shadow:0 0 0 4px #087e731a}
+.btn-primary{background:#087e73;color:white}.muted{color:#667085}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="container-wide flex h-[72px] items-center justify-between gap-4"><a href="/index.html" class="font-extrabold tracking-tight">AUTO<span class="text-teal-700">VERIFY</span></a><nav class="flex gap-5 text-xs font-bold"><a href="/index.html">Home</a><a href="/pricing.html">Pricing</a><a href="/policy.html">Policy</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="container-wide py-10 sm:py-16">
+<div class="mx-auto max-w-3xl">
+<a href="/pricing.html" class="text-sm font-bold text-teal-700">← Back to packages</a>
+<div class="mt-6 text-center"><p class="text-[10px] font-extrabold uppercase tracking-[.2em] text-teal-700">Your selection</p><h1 class="mt-2 text-3xl font-extrabold sm:text-4xl">Customer details</h1><p class="mt-3 text-sm leading-6 muted">Review the package and vehicle information you selected.</p></div>
+<section class="mt-8 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
+<h2 class="text-lg font-extrabold">Selected report package</h2>
+<div class="mt-4 grid gap-4 rounded-xl bg-slate-50 p-4 sm:grid-cols-3">
+<div><p class="text-[10px] font-bold uppercase tracking-wider muted">Package</p><p id="packageName" class="mt-1 text-lg font-extrabold">Not selected</p></div>
+<div><p class="text-[10px] font-bold uppercase tracking-wider muted">Price</p><p id="packagePrice" class="mt-1 text-lg font-extrabold">—</p></div>
+<div><p class="text-[10px] font-bold uppercase tracking-wider muted">VIN</p><p id="vehicleVin" class="mt-1 break-all font-mono text-sm font-bold">Not provided</p></div>
+</div>
+<div id="selectionWarning" class="mt-4 hidden rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">No package was selected. Please return to pricing and choose Silver, Gold or Platinum.</div>
+</section>
+<section class="mt-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
+<h2 class="text-lg font-extrabold">Contact information</h2>
+<p class="mt-2 text-sm leading-6 muted">These fields are shown for the planned order flow. Online ordering and payment are not active yet, so this page will not submit or store your information.</p>
+<form id="detailsForm" class="mt-5 grid gap-4 sm:grid-cols-2">
+<label class="text-sm font-semibold">Full name<input class="field mt-2" name="name" autocomplete="name" placeholder="Your full name" required></label>
+<label class="text-sm font-semibold">Email address<input class="field mt-2" type="email" name="email" autocomplete="email" placeholder="you@example.com" required></label>
+<label class="text-sm font-semibold sm:col-span-2">VIN<input id="vinInput" class="field mt-2 font-mono uppercase" name="vin" maxlength="17" placeholder="Vehicle identification number"></label>
+<div class="sm:col-span-2 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-900"><strong>Ordering is not available yet.</strong> AutoVerify has not connected a live vehicle-history provider or secure checkout. No payment can be taken and no vehicle report can be generated from this page.</div>
+<div class="flex flex-col gap-3 sm:col-span-2 sm:flex-row"><a href="/pricing.html" class="rounded-xl border border-slate-300 px-5 py-3 text-center text-sm font-extrabold">Change package</a><a href="/contact.html" class="btn-primary rounded-xl px-5 py-3 text-center text-sm font-extrabold">Contact AutoVerify</a></div>
+</form>
+</section>
+</div>
+</main>
+<footer class="mt-12 border-t bg-white py-7"><div class="container-wide flex flex-wrap justify-between gap-4 text-xs text-slate-500"><strong>AUTOVERIFY · © 2026</strong><nav class="flex gap-5"><a href="/index.html">Home</a><a href="/pricing.html">Pricing</a><a href="/policy.html">Policy</a><a href="/contact.html">Contact</a></nav></div></footer>
+<script>
+const params=new URLSearchParams(location.search);
+const packageName=sessionStorage.getItem('autoverify_package')||params.get('package')||'';
+const price=sessionStorage.getItem('autoverify_price')||'';
+const vin=sessionStorage.getItem('autoverify_vin')||params.get('vin')||'';
+const validPrices={Silver:'47.99',Gold:'68.99',Platinum:'89.99'};
+document.getElementById('packageName').textContent=validPrices[packageName]?packageName:'Not selected';
+document.getElementById('packagePrice').textContent=validPrices[packageName]?'$'+validPrices[packageName]:'—';
+document.getElementById('vehicleVin').textContent=vin||'Not provided';
+document.getElementById('vinInput').value=vin;
+if(!validPrices[packageName])document.getElementById('selectionWarning').classList.remove('hidden');
+document.getElementById('detailsForm').addEventListener('submit',e=>e.preventDefault());
+</script>
+</body>
+</html>
