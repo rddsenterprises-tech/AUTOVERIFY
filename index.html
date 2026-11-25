@@ -1,299 +1,86 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f8fa">
-  <meta name="description" content="Explore AutoVerify vehicle history report packages and vehicle lookup options.">
-  <title>AutoVerify — Clarity Before Every Drive</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{--ink:#101827;--muted:#667085;--line:#e7eaf0;--accent:#087e73;--gold:#c99b42}
-    *{box-sizing:border-box}
-    body{font-family:"DM Sans",sans-serif;color:var(--ink);background:#f7f8fa}
-    h1,h2,h3,.display{font-family:Manrope,"DM Sans",sans-serif}
-    .container-wide{width:min(1160px,calc(100% - 40px));margin-inline:auto}
-    .topbar{background:rgba(255,255,255,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(231,234,240,.9)}
-    .brand-mark{background:linear-gradient(145deg,#0c8e80,#075a56);box-shadow:0 8px 20px rgba(8,126,115,.2)}
-    .hero-shell{background:radial-gradient(ellipse at 85% 15%,rgba(8,126,115,.10),transparent 35%),linear-gradient(135deg,#f4f7f8 0%,#fff 58%,#f7f4ed 100%)}
-    .hero-grid{background-image:linear-gradient(rgba(16,24,39,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(16,24,39,.035) 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(to bottom,black,transparent)}
-    .panel{background:#fff;border:1px solid var(--line);box-shadow:0 18px 55px rgba(16,24,39,.07)}
-    .soft-card{background:#fff;border:1px solid var(--line);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
-    .soft-card:hover{transform:translateY(-4px);border-color:#cbd5df;box-shadow:0 18px 35px rgba(16,24,39,.08)}
-    .btn-primary{background:#087e73;color:#fff;box-shadow:0 8px 18px rgba(8,126,115,.16);transition:background .2s,transform .2s}
-    .btn-primary:hover{background:#06685f;transform:translateY(-1px)}
-    .btn-dark{background:#101827;color:#fff;transition:background .2s,transform .2s}
-    .btn-dark:hover{background:#253247;transform:translateY(-1px)}
-    .field{width:100%;border:1px solid #dce2e9;border-radius:12px;background:#fff;padding:14px 15px;color:#101827;outline:none;transition:border .2s,box-shadow .2s}
-    .field:focus{border-color:#087e73;box-shadow:0 0 0 4px rgba(8,126,115,.10)}
-    .tab[aria-pressed="true"]{color:#087e73;border-color:#087e73;background:#effaf8}
-    .gold-card{border:1.5px solid #d4ad62;box-shadow:0 18px 45px rgba(156,116,40,.10)}
-    .gold-pill{background:#f8efd9;color:#8b641d}
-    .eyebrow{letter-spacing:.18em}
-    .section-space{padding-block:88px}
-    .reveal{animation:rise .65s both}
-    @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-    :focus-visible{outline:3px solid rgba(8,126,115,.55);outline-offset:3px}
-    @media(max-width:640px){.container-wide{width:min(100% - 28px,1160px)}.section-space{padding-block:62px}}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
-    @media print{header,footer,.no-print{display:none!important}body{background:#fff}}
-  </style>
-</head>
-<body>
-<header class="topbar sticky top-0 z-40">
-  <div class="container-wide flex h-[76px] items-center justify-between gap-5">
-    <a href="#home" class="flex items-center gap-3" aria-label="AutoVerify home">
-      <span class="brand-mark grid h-11 w-11 place-items-center rounded-[14px] text-lg font-extrabold text-white">A</span>
-      <span><strong class="block text-[17px] font-extrabold tracking-[-.06em] text-slate-900">AUTO<span class="text-teal-700">VERIFY</span></strong><small class="block text-[9px] font-bold uppercase tracking-[.2em] text-slate-500">Vehicle intelligence</small></span>
-    </a>
-    <nav class="hidden items-center gap-8 text-[13px] font-semibold text-slate-600 md:flex" aria-label="Main navigation">
-      <a class="transition hover:text-teal-700" href="#how-it-works">How it works</a>
-      <a class="transition hover:text-teal-700" href="#features">What’s included</a>
-      <a class="transition hover:text-teal-700" href="#pricing">Pricing</a>
-      <a class="transition hover:text-teal-700" href="#contact">Support</a>
-    </nav>
-    <a href="#lookup" class="btn-dark rounded-full px-5 py-3 text-xs font-bold">Check a vehicle <span class="ml-2">↗</span></a>
-  </div>
-</header>
-
-<main id="home">
-  <section class="hero-shell relative overflow-hidden">
-    <div class="hero-grid pointer-events-none absolute inset-0"></div>
-    <div class="container-wide relative grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.02fr_.98fr] lg:py-24">
-      <div class="reveal">
-        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-teal-800/10 bg-white/80 px-3.5 py-2 text-[11px] font-bold text-teal-800 shadow-sm">
-          <span class="h-2 w-2 rounded-full bg-teal-600"></span> A clearer view of a vehicle’s past
-        </div>
-        <h1 class="display max-w-[640px] text-[42px] font-extrabold leading-[1.08] tracking-[-.055em] text-slate-950 sm:text-6xl">Know the story.<br><span class="text-teal-700">Drive with confidence.</span></h1>
-        <p class="mt-6 max-w-[540px] text-[15px] leading-7 text-slate-600 sm:text-[17px]">Explore vehicle information before making your next move. Start with a VIN or registration lookup and choose the report package that fits your needs.</p>
-        <div class="mt-8 flex flex-wrap items-center gap-3">
-          <a href="#lookup" class="btn-primary inline-flex items-center rounded-full px-6 py-4 text-sm font-extrabold">Start vehicle lookup <span class="ml-3 text-lg">→</span></a>
-          <a href="#pricing" class="rounded-full border border-slate-300 bg-white/70 px-6 py-4 text-sm font-bold text-slate-700 transition hover:border-slate-500">Explore packages</a>
-        </div>
-        <div class="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-[11px] font-semibold text-slate-500">
-          <span class="flex items-center gap-2"><span class="text-teal-700">✓</span> Simple lookup experience</span>
-          <span class="flex items-center gap-2"><span class="text-teal-700">✓</span> Clear package options</span>
-          <span class="flex items-center gap-2"><span class="text-teal-700">✓</span> Support when you need it</span>
-        </div>
-      </div>
-      <div class="relative mx-auto w-full max-w-[530px] reveal" style="animation-delay:.12s">
-        <div class="absolute -inset-5 rounded-[36px] bg-gradient-to-br from-teal-100/70 via-white/20 to-amber-100/70 blur-2xl"></div>
-        <div class="panel relative overflow-hidden rounded-[28px] p-5 sm:p-7">
-          <div class="flex items-center justify-between border-b border-slate-100 pb-4">
-            <div><p class="text-[10px] font-extrabold uppercase tracking-[.2em] text-teal-700">Vehicle intelligence</p><h2 class="mt-1 text-lg font-extrabold tracking-tight">A more informed decision</h2></div>
-            <span class="grid h-10 w-10 place-items-center rounded-xl bg-teal-50 text-xl text-teal-700">⌕</span>
-          </div>
-          <div class="mt-5 rounded-2xl bg-slate-950 p-5 text-white">
-            <div class="flex items-center justify-between"><span class="text-[10px] font-bold uppercase tracking-[.18em] text-slate-400">Vehicle overview</span><span class="rounded-full bg-white/10 px-2.5 py-1 text-[9px] font-bold text-teal-200">LOOKUP OPTIONS</span></div>
-            <svg viewBox="0 0 520 190" role="img" aria-label="Stylized side profile of a modern vehicle" class="mt-4 w-full">
-              <defs><linearGradient id="carPaint" x1="0" x2="1"><stop stop-color="#dce7e8"/><stop offset=".5" stop-color="#8ea5a8"/><stop offset="1" stop-color="#f0f4f2"/></linearGradient></defs>
-              <path d="M65 126 L83 103 Q101 91 151 86 L201 43 Q220 28 254 28 L345 30 Q369 31 388 55 L428 92 L462 104 Q477 111 479 129 L474 143 L48 143 L45 132 Q46 126 65 126Z" fill="url(#carPaint)" stroke="#e8f1ef" stroke-width="2"/>
-              <path d="M174 83 L214 48 Q224 40 251 40 L279 40 L279 84Z M294 40 L341 42 Q360 44 375 66 L389 84 L294 84Z" fill="#19313b" stroke="#a6bdbe" stroke-width="2"/>
-              <path d="M53 116 Q110 108 167 108 L408 108 Q448 108 473 120" fill="none" stroke="#647b7d" stroke-width="3" opacity=".65"/>
-              <path d="M52 126 L92 126 M438 126 L472 126" stroke="#d8a95b" stroke-width="5" stroke-linecap="round"/>
-              <circle cx="139" cy="143" r="28" fill="#101827" stroke="#64748b" stroke-width="5"/><circle cx="139" cy="143" r="12" fill="#cbd5e1"/><circle cx="139" cy="143" r="4" fill="#475569"/>
-              <circle cx="390" cy="143" r="28" fill="#101827" stroke="#64748b" stroke-width="5"/><circle cx="390" cy="143" r="12" fill="#cbd5e1"/><circle cx="390" cy="143" r="4" fill="#475569"/>
-            </svg>
-            <div class="mt-1 grid grid-cols-3 gap-2 border-t border-white/10 pt-4">
-              <div><p class="text-[9px] uppercase tracking-wider text-slate-500">Search</p><p class="mt-1 text-xs font-bold">VIN</p></div>
-              <div><p class="text-[9px] uppercase tracking-wider text-slate-500">Search</p><p class="mt-1 text-xs font-bold">Plate</p></div>
-              <div><p class="text-[9px] uppercase tracking-wider text-slate-500">Reports</p><p class="mt-1 text-xs font-bold">3 options</p></div>
-            </div>
-          </div>
-          <div class="mt-4 grid grid-cols-2 gap-3">
-            <div class="rounded-xl border border-slate-100 bg-slate-50 p-3.5"><span class="text-lg text-teal-700">⌁</span><p class="mt-2 text-xs font-extrabold">Vehicle details</p><p class="mt-1 text-[10px] text-slate-500">Specifications and identity</p></div>
-            <div class="rounded-xl border border-slate-100 bg-slate-50 p-3.5"><span class="text-lg text-amber-600">◷</span><p class="mt-2 text-xs font-extrabold">History insights</p><p class="mt-1 text-[10px] text-slate-500">Records where available</p></div>
-          </div>
-          <p class="mt-4 text-[10px] leading-5 text-slate-400">Report availability depends on supported data providers and vehicle coverage. No live record lookup is active yet.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="lookup" class="container-wide relative z-10 -mt-2 scroll-mt-28 pb-10">
-    <div class="panel mx-auto max-w-[900px] rounded-[24px] p-5 sm:p-8">
-      <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-        <div><p class="eyebrow text-[10px] font-extrabold uppercase text-teal-700">Get started</p><h2 class="display mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl">Start with your vehicle</h2><p class="mt-2 text-sm text-slate-500">Enter a VIN or registration number to begin.</p></div>
-        <span class="w-fit rounded-full bg-slate-100 px-3 py-1.5 text-[10px] font-bold text-slate-500">VIN • REGISTRATION</span>
-      </div>
-      <div class="mt-6 flex gap-2 border-b border-slate-100 pb-4">
-        <button id="vinTab" class="tab rounded-full border border-transparent px-4 py-2.5 text-xs font-bold text-slate-500 transition" aria-pressed="true">VIN number</button>
-        <button id="plateTab" class="tab rounded-full border border-transparent px-4 py-2.5 text-xs font-bold text-slate-500 transition" aria-pressed="false">License plate</button>
-      </div>
-      <form id="lookupForm" class="mt-5">
-        <div id="vinFields">
-          
-          <input id="vin" maxlength="17" autocomplete="off" spellcheck="false" placeholder="Enter VIN" class="field font-mono uppercase tracking-wider">
-          <p class="mt-2 text-[10px] text-slate-400">Usually found on the dashboard near the windshield or inside the driver-side door.</p>
-        </div>
-        <div id="plateFields" class="hidden grid-cols-1 gap-3 sm:grid-cols-[1.3fr_.7fr]">
-          <div><label for="plate" class="mb-2 block text-xs font-bold text-slate-700">Registration / license plate</label><input id="plate" maxlength="12" placeholder="Enter plate number" class="field font-mono uppercase"></div>
-          <div><label for="region" class="mb-2 block text-xs font-bold text-slate-700">State / region</label><select id="region" class="field"><option value="CA">California</option><option value="TX">Texas</option><option value="NY">New York</option><option value="FL">Florida</option><option value="ON">Ontario</option><option value="OTHER">Other</option></select></div>
-        </div>
-        <p id="formError" class="mt-3 hidden text-xs font-semibold text-rose-600" role="alert"></p>
-        <button type="submit" class="btn-primary mt-5 flex w-full items-center justify-center rounded-xl py-4 text-sm font-extrabold">Continue to report options <span class="ml-3 text-lg">→</span></button>
-        <p class="mt-3 text-center text-[10px] leading-5 text-slate-400">Submitting this form currently validates the entered format only. It does not retrieve official vehicle records.</p>
-      </form>
-    </div>
-  </section>
-
-  <section id="how-it-works" class="section-space">
-    <div class="container-wide">
-      <div class="mx-auto max-w-[620px] text-center"><p class="eyebrow text-[10px] font-extrabold uppercase text-teal-700">A simple process</p><h2 class="display mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Clarity in three steps</h2><p class="mt-4 text-sm leading-7 text-slate-500">A straightforward experience designed to help you find the right information for your next vehicle decision.</p></div>
-      <div class="mt-12 grid gap-4 md:grid-cols-3">
-        <article class="soft-card rounded-2xl p-6"><span class="grid h-11 w-11 place-items-center rounded-xl bg-teal-50 text-sm font-extrabold text-teal-700">01</span><h3 class="mt-5 text-lg font-extrabold">Enter vehicle details</h3><p class="mt-2 text-sm leading-6 text-slate-500">Start with the VIN or registration details supported for your vehicle’s region.</p></article>
-        <article class="soft-card rounded-2xl p-6"><span class="grid h-11 w-11 place-items-center rounded-xl bg-amber-50 text-sm font-extrabold text-amber-700">02</span><h3 class="mt-5 text-lg font-extrabold">Choose your package</h3><p class="mt-2 text-sm leading-6 text-slate-500">Compare the available report options and select the coverage you need.</p></article>
-        <article class="soft-card rounded-2xl p-6"><span class="grid h-11 w-11 place-items-center rounded-xl bg-slate-100 text-sm font-extrabold text-slate-700">03</span><h3 class="mt-5 text-lg font-extrabold">Review your report</h3><p class="mt-2 text-sm leading-6 text-slate-500">Review available vehicle information once a supported data and delivery service is connected.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section id="features" class="section-space bg-white">
-    <div class="container-wide">
-      <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><p class="eyebrow text-[10px] font-extrabold uppercase text-teal-700">Explore the details</p><h2 class="display mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Information that matters</h2></div><p class="max-w-[430px] text-sm leading-6 text-slate-500">Potential report sections depend on data availability, source coverage and the vehicle’s history.</p></div>
-      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <article class="soft-card rounded-2xl p-6"><span class="text-2xl text-teal-700">▤</span><h3 class="mt-4 font-extrabold">Vehicle specifications</h3><p class="mt-2 text-xs leading-6 text-slate-500">Make, model, year, trim and available vehicle identity details.</p></article>
-        <article class="soft-card rounded-2xl p-6"><span class="text-2xl text-amber-600">⌁</span><h3 class="mt-4 font-extrabold">Title & registration</h3><p class="mt-2 text-xs leading-6 text-slate-500">Available title and registration-related records from supported sources.</p></article>
-        <article class="soft-card rounded-2xl p-6"><span class="text-2xl text-rose-600">◇</span><h3 class="mt-4 font-extrabold">Accident & damage</h3><p class="mt-2 text-xs leading-6 text-slate-500">Reported events and damage indicators when records are available.</p></article>
-        <article class="soft-card rounded-2xl p-6"><span class="text-2xl text-sky-700">◷</span><h3 class="mt-4 font-extrabold">Mileage history</h3><p class="mt-2 text-xs leading-6 text-slate-500">Recorded odometer readings and chronology where reported.</p></article>
-        <article class="soft-card rounded-2xl p-6"><span class="text-2xl text-violet-700">⌂</span><h3 class="mt-4 font-extrabold">Ownership insights</h3><p class="mt-2 text-xs leading-6 text-slate-500">Ownership and usage information where supported by the provider.</p></article>
-        <article class="soft-card rounded-2xl p-6"><span class="text-2xl text-emerald-700">✓</span><h3 class="mt-4 font-extrabold">Recall information</h3><p class="mt-2 text-xs leading-6 text-slate-500">Recall information from supported sources and official safety databases.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section id="pricing" class="section-space scroll-mt-20">
-    <div class="container-wide">
-      <div class="mx-auto max-w-[650px] text-center"><p class="eyebrow text-[10px] font-extrabold uppercase text-teal-700">Transparent package options</p><h2 class="display mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Choose your level of insight</h2><p class="mt-4 text-sm leading-6 text-slate-500">Compare the proposed report packages. Checkout and report delivery will be enabled after the required services are connected.</p></div>
-      <div class="mx-auto mt-12 grid max-w-[1080px] items-stretch gap-5 lg:grid-cols-3">
-        <article class="soft-card flex flex-col rounded-[22px] p-6 sm:p-7">
-          <div class="flex items-center justify-between"><h3 class="text-lg font-extrabold">Silver</h3><span class="rounded-full bg-slate-100 px-3 py-1 text-[9px] font-extrabold uppercase tracking-wider text-slate-600">Essential</span></div>
-          <p class="mt-6 text-4xl font-extrabold tracking-tight">$47.99</p><p class="mt-2 text-xs text-slate-500">Essential vehicle information</p><div class="my-6 h-px bg-slate-100"></div>
-          <p class="text-[10px] font-extrabold uppercase tracking-[.16em] text-teal-700">Package includes</p>
-          <ul class="mt-4 flex-1 space-y-3 text-[13px] text-slate-600"><li>✓ Vehicle specifications</li><li>✓ Downloadable report format</li><li>✓ Title status information</li><li>✓ Accident & damage records</li><li>✓ Open recall information</li><li>✓ Odometer records</li><li>✓ Stolen vehicle check</li></ul>
-          <button type="button" data-package="Silver" class="buyPlan mt-8 w-full rounded-xl border border-slate-300 py-3.5 text-sm font-extrabold transition hover:border-teal-700 hover:bg-teal-50 hover:text-teal-800">Choose Silver</button>
-        </article>
-        <article class="gold-card relative flex flex-col rounded-[22px] bg-white p-6 sm:p-7">
-          <span class="gold-pill absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-4 py-1.5 text-[9px] font-extrabold uppercase tracking-[.14em]">Most popular</span>
-          <div class="flex items-center justify-between"><h3 class="text-lg font-extrabold">Gold</h3><span class="gold-pill rounded-full px-3 py-1 text-[9px] font-extrabold uppercase tracking-wider">Advanced</span></div>
-          <p class="mt-6 text-4xl font-extrabold tracking-tight">$68.99</p><p class="mt-2 text-xs text-slate-500">More history and ownership insights</p><div class="my-6 h-px bg-amber-100"></div>
-          <p class="text-[10px] font-extrabold uppercase tracking-[.16em] text-amber-700">Everything in Silver, plus</p>
-          <ul class="mt-4 flex-1 space-y-3 text-[13px] text-slate-600"><li>✓ Ownership details</li><li>✓ Registration history</li><li>✓ Market value estimate</li><li>✓ Total loss & salvage records</li><li>✓ Service history, when available</li><li>✓ Vehicle usage records</li><li>✓ Lien status information</li></ul>
-          <button type="button" data-package="Gold" class="buyPlan btn-dark mt-8 w-full rounded-xl py-3.5 text-sm font-extrabold">Choose Gold <span class="ml-2">→</span></button>
-        </article>
-        <article class="soft-card flex flex-col rounded-[22px] p-6 sm:p-7">
-          <div class="flex items-center justify-between"><h3 class="text-lg font-extrabold">Platinum</h3><span class="rounded-full bg-violet-50 px-3 py-1 text-[9px] font-extrabold uppercase tracking-wider text-violet-700">Premium</span></div>
-          <p class="mt-6 text-4xl font-extrabold tracking-tight">$89.99</p><p class="mt-2 text-xs text-slate-500">Expanded report coverage</p><div class="my-6 h-px bg-slate-100"></div>
-          <p class="text-[10px] font-extrabold uppercase tracking-[.16em] text-teal-700">Everything in Gold, plus</p>
-          <ul class="mt-4 flex-1 space-y-3 text-[13px] text-slate-600"><li>✓ Active lien & loan information</li><li>✓ Expanded record search</li><li>✓ Auction history, when available</li><li>✓ Flood, fire & hail indicators</li><li>✓ Advanced vehicle insights</li><li>✓ Priority processing option</li><li>✓ Premium customer support</li></ul>
-          <button type="button" data-package="Platinum" class="buyPlan mt-8 w-full rounded-xl border border-slate-300 py-3.5 text-sm font-extrabold transition hover:border-teal-700 hover:bg-teal-50 hover:text-teal-800">Choose Platinum</button>
-        </article>
-      </div>
-      <p class="mx-auto mt-7 max-w-3xl text-center text-[10px] leading-5 text-slate-400">Prices and package contents are proposed and are not currently available for purchase. Actual coverage, availability and delivery terms must be confirmed with the selected licensed data provider before launch.</p>
-    </div>
-  </section>
-
-  <section class="bg-slate-950 py-16 text-white sm:py-20">
-    <div class="container-wide grid items-center gap-8 md:grid-cols-[1fr_auto]">
-      <div><p class="eyebrow text-[10px] font-extrabold uppercase text-teal-300">Make your next move informed</p><h2 class="display mt-3 max-w-[650px] text-3xl font-extrabold tracking-tight sm:text-4xl">A better vehicle decision starts with better information.</h2><p class="mt-4 max-w-[570px] text-sm leading-6 text-slate-400">Explore the available package options and prepare for a more informed vehicle purchase.</p></div>
-      <a href="#lookup" class="inline-flex w-fit items-center rounded-full bg-white px-6 py-4 text-sm font-extrabold text-slate-950 transition hover:bg-teal-100">Start a lookup <span class="ml-3">↗</span></a>
-    </div>
-  </section>
-
-  <section id="privacy" class="container-wide scroll-mt-24 border-b border-slate-200 py-12">
-    <div class="max-w-[820px]"><p class="eyebrow text-[10px] font-extrabold uppercase text-teal-700">Your information</p><h2 class="mt-2 text-xl font-extrabold">Privacy & data use</h2><p class="mt-3 text-sm leading-6 text-slate-500">Before vehicle lookups, customer accounts or payments are enabled, AutoVerify must publish its complete privacy policy describing collected information, processing purposes, service providers, retention periods and customer rights. This page is a preliminary notice and is not a substitute for the final policy.</p></div>
-  </section>
-  <section id="contact" class="container-wide scroll-mt-24 py-12">
-    <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-center"><div><p class="eyebrow text-[10px] font-extrabold uppercase text-teal-700">We’re here to help</p><h2 class="mt-2 text-xl font-extrabold">Customer support</h2><p class="mt-2 text-sm text-slate-500">Live chat will be available here after the support account is connected.</p></div><a href="https://dashboard.tawk.to/" target="_blank" rel="noopener noreferrer" class="w-fit rounded-full border border-slate-300 bg-white px-5 py-3 text-xs font-bold text-slate-700 transition hover:border-teal-700 hover:text-teal-800">Support team access ↗</a></div>
-  </section>
-</main>
-
-<footer class="border-t border-slate-200 bg-white py-7">
-  <div class="container-wide flex flex-col justify-between gap-4 text-[10px] text-slate-400 sm:flex-row sm:items-center"><div class="flex items-center gap-2"><span class="brand-mark grid h-7 w-7 place-items-center rounded-lg text-[11px] font-extrabold text-white">A</span><strong class="text-xs tracking-tight text-slate-700">AUTO<span class="text-teal-700">VERIFY</span></strong><span>© 2026</span></div><div class="flex flex-wrap gap-5 font-semibold"><a href="#home" class="hover:text-teal-700">Home</a><a href="#pricing" class="hover:text-teal-700">Pricing</a><a href="#privacy" class="hover:text-teal-700">Privacy</a><a href="#contact" class="hover:text-teal-700">Support</a><a href="/admin.html" class="hover:text-teal-700">Admin</a></div><span>Vehicle information, made clearer.</span></div>
-</footer>
-
-<section id="report" class="container-wide hidden py-12" aria-live="polite">
-  <div class="panel rounded-2xl p-6 sm:p-8">
-    <button id="backBtn" class="no-print mb-5 text-xs font-bold text-teal-700 hover:underline">← Back to lookup</button>
-    <p class="eyebrow text-[10px] font-extrabold uppercase text-teal-700">Lookup details</p>
-    <h2 id="vehicleTitle" class="mt-2 text-2xl font-extrabold">Vehicle lookup</h2>
-    <p class="mt-2 text-xs text-slate-500">Reference: <span id="lookupRef" class="font-mono"></span></p>
-    <div class="mt-6 rounded-xl border border-amber-200 bg-amber-50 p-4 text-xs leading-5 text-amber-900">This is an illustrative report layout, not a verified vehicle history report. AutoVerify is not currently connected to a live vehicle-record provider. No vehicle records have been retrieved.</div>
-    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="rounded-xl bg-slate-50 p-4"><p class="text-[10px] uppercase tracking-wider text-slate-500">Vehicle identity</p><p class="mt-2 font-bold">Awaiting provider</p></div>
-      <div class="rounded-xl bg-slate-50 p-4"><p class="text-[10px] uppercase tracking-wider text-slate-500">Title information</p><p class="mt-2 font-bold">Not retrieved</p></div>
-      <div class="rounded-xl bg-slate-50 p-4"><p class="text-[10px] uppercase tracking-wider text-slate-500">Mileage records</p><p class="mt-2 font-bold">Not retrieved</p></div>
-      <div class="rounded-xl bg-slate-50 p-4"><p class="text-[10px] uppercase tracking-wider text-slate-500">Safety recalls</p><p class="mt-2 font-bold">Not retrieved</p></div>
-    </div>
-    <button id="printBtn" class="no-print btn-dark mt-6 rounded-xl px-5 py-3 text-xs font-bold">Print lookup details</button>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f7f8fa"><meta name="description" content="Start your AutoVerify vehicle history report search with a VIN."><title>AutoVerify | Know Before You Drive</title>
+<script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>*{box-sizing:border-box}body{font-family:"DM Sans",sans-serif;color:#101827;background:#f7f8fa}h1,h2,h3{font-family:Manrope,sans-serif}.container-wide{width:min(1160px,calc(100% - 32px));margin:auto}.topbar{background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid #e7eaf0}.brand-mark{background:#087e73}.btn-primary{background:#087e73;color:#fff}.btn-dark{background:#101827;color:#fff}.field{width:100%;border:1px solid #dce2e9;border-radius:12px;padding:14px 15px;outline:none}.field:focus{border-color:#087e73;box-shadow:0 0 0 4px #087e731a}nav a:hover,footer a:hover{color:#087e73}@media(max-width:640px){.container-wide{width:calc(100% - 26px)}nav{gap:11px!important}nav a{font-size:11px}}</style></head><body>
+<header class="topbar sticky top-0 z-40"><div class="container-wide flex h-[74px] items-center justify-between gap-4"><a href="/index.html" class="flex items-center gap-3"><strong>AUTO<span class="text-teal-700">VERIFY</span></strong></a><nav class="flex gap-3 text-xs font-bold sm:gap-7"><a href="/index.html">Home</a><a href="/pricing.html">Pricing</a><a href="/policy.html">Policy</a><a href="/contact.html">Contact</a></nav></div></header>
+<main>
+<section class="relative isolate flex min-h-[500px] items-center overflow-hidden bg-slate-950 text-white sm:min-h-[560px]">
+  <div class="absolute inset-0 -z-10" style="background-image:linear-gradient(90deg,rgba(5,16,24,.72) 0%,rgba(5,16,24,.30) 52%,rgba(5,16,24,.04) 100%),url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2200&q=90');background-position:center 55%;background-size:cover"></div>
+  <div class="container-wide py-20">
+    <p class="text-xs font-extrabold uppercase tracking-[.22em] text-teal-300">AutoVerify · Vehicle history reports</p>
+    <h1 class="mt-5 max-w-2xl text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl">Know the story.<br><span class="text-teal-300">Drive with confidence.</span></h1>
+    <p class="mt-6 max-w-xl text-base leading-7 text-white/90">Make a more informed decision before buying your next vehicle.</p>
   </div>
 </section>
-
-<dialog id="packageDialog" class="w-[min(92vw,480px)] rounded-[22px] border border-slate-200 bg-white p-0 text-slate-900 shadow-2xl backdrop:bg-slate-950/50">
-  <div class="p-6 sm:p-7">
-    <div class="flex items-start justify-between gap-4"><div><p class="eyebrow text-[10px] font-extrabold uppercase text-teal-700">Package selected</p><h2 id="dialogTitle" class="mt-2 text-2xl font-extrabold">Silver package</h2></div><button id="closeDialog" class="grid h-9 w-9 place-items-center rounded-full bg-slate-100 text-xl text-slate-500 hover:bg-slate-200" aria-label="Close dialog">×</button></div>
-    <p class="mt-4 text-sm leading-6 text-slate-500">The package selection is ready, but secure checkout and the live report service have not been connected yet. No payment will be taken.</p>
-    <div class="mt-6 rounded-xl border border-amber-200 bg-amber-50 p-4 text-xs leading-5 text-amber-900">Purchases are not enabled yet. This selection does not create an order or charge a payment method.</div>
-    <button id="dialogDone" class="btn-primary mt-6 w-full rounded-xl py-3.5 text-sm font-extrabold">Understood</button>
+<section class="container-wide relative z-10 pb-6 pt-8 sm:pb-10 sm:pt-10">
+  <div id="vehicle-search" class="mx-auto w-full max-w-2xl scroll-mt-28 rounded-2xl border border-slate-200 bg-white p-5 text-slate-900 shadow-xl sm:p-7">
+    <div class="text-center"><p class="text-xs font-extrabold uppercase tracking-[.18em] text-teal-700">Start your vehicle search</p><h2 class="mt-1.5 text-xl font-extrabold sm:text-2xl">Search by VIN</h2><p class="mt-2 text-sm leading-6 text-slate-500">Enter your vehicle identification number to continue to report packages.</p></div>
+    <form id="vinForm" class="mt-5">
+      
+      <input id="vin" required autocomplete="off" spellcheck="false" placeholder="Enter VIN" maxlength="17" class="field font-mono uppercase tracking-wider">
+      <p id="vinError" class="mt-2 hidden text-xs font-semibold text-rose-600" role="alert"></p>
+      <button class="btn-primary mt-3 w-full rounded-xl py-3.5 text-sm font-extrabold">Continue to pricing →</button>
+    </form>
+    <p class="mt-3 text-center text-[10px] leading-5 text-slate-400">VIN format is checked in your browser only. No official vehicle records are retrieved or sent to a provider.</p>
   </div>
-</dialog>
-
-<script>
-  // Configure the Tawk.to Property ID and Widget ID after the client's account is ready.
-  const TAWK_PROPERTY_ID = '';
-  const TAWK_WIDGET_ID = '';
-  if (TAWK_PROPERTY_ID && TAWK_WIDGET_ID) {
-    window.Tawk_API = window.Tawk_API || {};
-    window.Tawk_LoadStart = new Date();
-    const tawkScript = document.createElement('script');
-    tawkScript.async = true;
-    tawkScript.src = 'https://embed.tawk.to/' + TAWK_PROPERTY_ID + '/' + TAWK_WIDGET_ID;
-    tawkScript.charset = 'UTF-8';
-    tawkScript.setAttribute('crossorigin', '*');
-    document.head.appendChild(tawkScript);
-  }
-
-  const $ = (id) => document.getElementById(id);
-  let searchMode = 'vin';
-  function setMode(next) {
-    searchMode = next;
-    $('vinFields').classList.toggle('hidden', next !== 'vin');
-    $('plateFields').classList.toggle('hidden', next !== 'plate');
-    $('plateFields').classList.toggle('grid', next === 'plate');
-    $('vinTab').setAttribute('aria-pressed', String(next === 'vin'));
-    $('plateTab').setAttribute('aria-pressed', String(next === 'plate'));
-    $('formError').classList.add('hidden');
-  }
-  $('vinTab').addEventListener('click', () => setMode('vin'));
-  $('plateTab').addEventListener('click', () => setMode('plate'));
-  $('lookupForm').addEventListener('submit', (event) => {
-    event.preventDefault();
-    const value = searchMode === 'vin' ? $('vin').value.trim().toUpperCase() : $('plate').value.trim().toUpperCase();
-    const valid = searchMode === 'vin' ? /^[A-HJ-NPR-Z0-9]{17}$/.test(value) : /^[A-Z0-9 -]{2,12}$/.test(value);
-    if (!valid) {
-      $('formError').textContent = searchMode === 'vin' ? 'Enter a valid 17-character VIN. Letters I, O and Q are not used.' : 'Enter a valid registration or license plate number.';
-      $('formError').classList.remove('hidden');
-      return;
+</section>
+<section class="border-y border-slate-200 bg-white py-16 sm:py-20">
+  <div class="container-wide">
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="text-[10px] font-extrabold uppercase tracking-[.2em] text-teal-700">Make an informed decision</p>
+      <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Understand more before you buy</h2>
+      <p class="mt-4 text-sm leading-7 text-slate-500">A vehicle history report can help you review available records and prepare better questions before committing to a purchase. The information shown depends on the vehicle and the records available from the data provider.</p>
+    </div>
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <article class="rounded-2xl border border-slate-200 bg-slate-50 p-6"><span class="text-2xl">⌁</span><h3 class="mt-3 font-extrabold">Title & vehicle status</h3><p class="mt-2 text-sm leading-6 text-slate-500">Review available title status and important vehicle status information.</p></article>
+      <article class="rounded-2xl border border-slate-200 bg-slate-50 p-6"><span class="text-2xl">↗</span><h3 class="mt-3 font-extrabold">Accident & damage records</h3><p class="mt-2 text-sm leading-6 text-slate-500">Check for reported accident or damage events where records are available.</p></article>
+      <article class="rounded-2xl border border-slate-200 bg-slate-50 p-6"><span class="text-2xl">◷</span><h3 class="mt-3 font-extrabold">Odometer history</h3><p class="mt-2 text-sm leading-6 text-slate-500">Review recorded mileage entries and look for changes that may need further investigation.</p></article>
+      <article class="rounded-2xl border border-slate-200 bg-slate-50 p-6"><span class="text-2xl">▤</span><h3 class="mt-3 font-extrabold">Ownership & registration</h3><p class="mt-2 text-sm leading-6 text-slate-500">Explore available ownership and registration history in eligible report packages.</p></article>
+      <article class="rounded-2xl border border-slate-200 bg-slate-50 p-6"><span class="text-2xl">!</span><h3 class="mt-3 font-extrabold">Recall & theft checks</h3><p class="mt-2 text-sm leading-6 text-slate-500">See available open recall and stolen-vehicle record information.</p></article>
+      <article class="rounded-2xl border border-slate-200 bg-slate-50 p-6"><span class="text-2xl">⌂</span><h3 class="mt-3 font-extrabold">Service & usage details</h3><p class="mt-2 text-sm leading-6 text-slate-500">Some packages may include service, usage, lien or auction-related records when reported.</p></article>
+    </div>
+    <p class="mx-auto mt-6 max-w-3xl text-center text-[10px] leading-5 text-slate-400">Report contents are subject to package availability and the records accessible through the selected data provider. A report may not contain every event in a vehicle's history and should not replace an independent inspection.</p>
+  </div>
+</section>
+<section class="container-wide py-16 sm:py-20">
+  <div class="grid items-center gap-10 lg:grid-cols-[.9fr_1.1fr]">
+    <div><p class="text-[10px] font-extrabold uppercase tracking-[.2em] text-teal-700">A clearer buying process</p><h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">A simple way to get started</h2><p class="mt-4 text-sm leading-7 text-slate-500">Start with the vehicle's VIN, review the available report options and check the details before proceeding. Explore the available report options and review the vehicle details before proceeding. Online checkout and provider-backed report delivery are currently unavailable.</p><a href="/pricing.html" class="mt-6 inline-flex rounded-xl bg-slate-900 px-5 py-3 text-sm font-extrabold text-white transition hover:bg-slate-700">Explore report options <span class="ml-2">→</span></a></div>
+    <div class="space-y-4">
+      <div class="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-teal-50 font-extrabold text-teal-700">01</span><div><h3 class="font-extrabold">Enter the VIN</h3><p class="mt-1 text-sm leading-6 text-slate-500">Use the 17-character vehicle identification number found on the vehicle or its documents.</p></div></div>
+      <div class="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-teal-50 font-extrabold text-teal-700">02</span><div><h3 class="font-extrabold">Review report options</h3><p class="mt-1 text-sm leading-6 text-slate-500">Compare the listed Silver, Gold and Platinum package details and pricing.</p></div></div>
+      <div class="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-teal-50 font-extrabold text-teal-700">03</span><div><h3 class="font-extrabold">Check availability & delivery</h3><p class="mt-1 text-sm leading-6 text-slate-500">Before any purchase, confirm provider coverage, payment availability and report delivery terms.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="border-y border-slate-200 bg-white py-16 sm:py-20">
+  <div class="container-wide">
+    <div class="mx-auto max-w-2xl text-center"><p class="text-[10px] font-extrabold uppercase tracking-[.2em] text-teal-700">Good to know</p><h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Frequently asked questions</h2><p class="mt-3 text-sm leading-7 text-slate-500">A few quick answers before you begin your vehicle search.</p></div>
+    <div class="mx-auto mt-8 max-w-3xl divide-y divide-slate-200 border-y border-slate-200">
+      <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-extrabold">Where can I find the VIN? <span class="text-xl text-teal-700 group-open:rotate-45">+</span></summary><p class="mt-3 text-sm leading-7 text-slate-500">A VIN is commonly visible near the lower corner of the windshield on the driver's side and on vehicle registration or insurance documents. Always compare the number with the vehicle itself.</p></details>
+      <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-extrabold">Does every report contain the same information? <span class="text-xl text-teal-700 group-open:rotate-45">+</span></summary><p class="mt-3 text-sm leading-7 text-slate-500">No. Available details can vary by vehicle, package and data-provider records. Some vehicles may have limited or no records for particular events.</p></details>
+      <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-extrabold">Can a vehicle history report replace an inspection? <span class="text-xl text-teal-700 group-open:rotate-45">+</span></summary><p class="mt-3 text-sm leading-7 text-slate-500">No. A history report is one source of information. Consider an independent mechanical inspection and verify important documents before buying.</p></details>
+      <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-extrabold">Are online orders and reports available right now? <span class="text-xl text-teal-700 group-open:rotate-45">+</span></summary><p class="mt-3 text-sm leading-7 text-slate-500">Online checkout is currently unavailable, and this website does not retrieve official vehicle records. Report availability depends on vehicle-data coverage and service activation.</p></details>
+    </div>
+  </div>
+</section>
+<section class="container-wide py-16 sm:py-20">
+  <div class="overflow-hidden rounded-3xl bg-slate-950 px-6 py-12 text-center text-white sm:px-12">
+    <p class="text-[10px] font-extrabold uppercase tracking-[.2em] text-teal-300">Your next vehicle deserves a closer look</p>
+    <h2 class="mx-auto mt-3 max-w-2xl text-3xl font-extrabold tracking-tight sm:text-4xl">Start with the VIN. Make your next decision informed.</h2>
+    <p class="mx-auto mt-4 max-w-xl text-sm leading-7 text-white/70">Review the available report options and learn what vehicle records may help you investigate.</p>
+    <a href="#vehicle-search" class="mt-7 inline-flex rounded-xl bg-teal-600 px-6 py-3.5 text-sm font-extrabold text-white transition hover:bg-teal-500">Search a VIN <span class="ml-2">→</span></a>
+  </div>
+</section>
+<section class="container-wide py-10 sm:py-14"><div class="grid gap-6 md:grid-cols-3"><article class="rounded-2xl border border-slate-200 bg-white p-6"><span class="text-2xl">01</span><h3 class="mt-3 font-extrabold">Enter VIN</h3><p class="mt-2 text-sm text-slate-500">Enter your vehicle number to begin.</p></article><article class="rounded-2xl border border-slate-200 bg-white p-6"><span class="text-2xl">02</span><h3 class="mt-3 font-extrabold">Choose a package</h3><p class="mt-2 text-sm text-slate-500">Compare Silver, Gold and Platinum options.</p></article><article class="rounded-2xl border border-slate-200 bg-white p-6"><span class="text-2xl">03</span><h3 class="mt-3 font-extrabold">Receive by email</h3><p class="mt-2 text-sm text-slate-500">After payment verification, the report is manually prepared and emailed.</p></article></div></section>
+</main>
+<footer class="border-t bg-white py-7"><div class="container-wide flex flex-wrap justify-between gap-4 text-xs text-slate-500"><strong>AUTOVERIFY · © 2026</strong><nav class="flex gap-5"><a href="/index.html">Home</a><a href="/pricing.html">Pricing</a><a href="/policy.html">Policy</a><a href="/contact.html">Contact</a></nav></div></footer>
+<script>document.getElementById('vinForm').addEventListener('submit',function(e){e.preventDefault();const input=document.getElementById('vin');const value=input.value.trim().toUpperCase();const error=document.getElementById('vinError');if(!value){error.textContent='Please enter your vehicle number to continue.';error.classList.remove('hidden');input.focus();return;}error.classList.add('hidden');sessionStorage.setItem('autoverify_vin',value);location.href='/pricing.html';});</script><script>
+(function(){
+  document.addEventListener('keydown',function(event){
+    if(event.metaKey && event.shiftKey && event.key.toLowerCase()==='a'){
+      event.preventDefault();
+      try{sessionStorage.setItem('autoverify_admin_shortcut','1');}catch(_){}
+      window.location.href='/admin.html';
     }
-    $('lookupRef').textContent = searchMode === 'vin' ? 'VIN · ' + value : 'PLATE · ' + value + ' · ' + $('region').value;
-    $('vehicleTitle').textContent = 'Vehicle lookup details';
-    $('report').classList.remove('hidden');
-    $('report').scrollIntoView({behavior:'smooth',block:'start'});
   });
-  $('backBtn').addEventListener('click', () => { $('report').classList.add('hidden'); $('lookup').scrollIntoView({behavior:'smooth'}); });
-  $('printBtn').addEventListener('click', () => window.print());
-
-  const packageDialog = $('packageDialog');
-  document.querySelectorAll('.buyPlan').forEach(button => button.addEventListener('click', () => {
-    $('dialogTitle').textContent = button.dataset.package + ' package';
-    packageDialog.showModal();
-  }));
-  $('closeDialog').addEventListener('click', () => packageDialog.close());
-  $('dialogDone').addEventListener('click', () => packageDialog.close());
-  packageDialog.addEventListener('click', event => { if (event.target === packageDialog) packageDialog.close(); });
-</script>
-</body>
-</html>
+})();
+</script></body></html>
